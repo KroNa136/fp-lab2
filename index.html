@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8" />
+    <title>Список задач</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main>
+        <h2 class="title">Список задач</h2>
+        <section class="task-add-section">
+            <input type="text" id="task-add-input" class="task-add-input" placeholder="Введите новую задачу...">
+            <button type="button" id="task-add-button">
+                <img src="add.svg" alt="Добавить" width="16" height="16">
+            </button>
+        </section>
+        <section class="filter-section">
+            <label class="filter-label" for="filter-select">Отображать:</label>
+            <select id="filter-select">
+                <option value="all">Все</option>
+                <option value="completed">Выполненные</option>
+                <option value="not-completed">Не выполненные</option>
+            </select>
+        </section>
+        <section id="task-list-section" class="task-list-section">
+            <!-- Здесь будет список задач -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
