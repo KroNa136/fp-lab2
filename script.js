@@ -28,7 +28,7 @@ const getFreeTaskId = () => {
 
 // Работа с задачами
 
-const addTask = (tasks, taskText) => [...tasks, { id: getFreeTaskId(), text: taskText, completed: false }];
+const addTask = (tasks, id, text) => [...tasks, { id: id, text: text, completed: false }];
 
 const setTaskCompletion = (tasks, id, completed) => tasks.map(
     (task) => hasId(task, id) ? { id: task.id, text: task.text, completed: completed } : task
@@ -55,7 +55,7 @@ const taskList = document.getElementById("task-list-section");
 // Обработчики событий интерфейса
 
 taskAddButton.onclick = () => {
-    updateStorage((tasks) => addTask(tasks, taskAddInput.value));
+    updateStorage((tasks) => addTask(tasks, getFreeTaskId(), taskAddInput.value));
     taskAddInput.value = "";
     renderTasks();
 };
